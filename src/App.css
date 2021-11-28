@@ -30,3 +30,32 @@ li{
   width:200px;
   margin-left: 0vw;
 }
+
+.buttons{
+  margin-top: 70px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 400px;
+}
+
+#btn1{
+  flex: 50%;
+}
+
+#btn2{
+  flex: 50%;
+}
+
+.likeLogo{
+  position: relative;
+  margin-left: 270px;
+  height:100%;
+  width:50px;
+}
+
+.likeCounter{
+  font-family: "Roboto";
+  font-weight: bold;
+  color: #f81616;
+}
