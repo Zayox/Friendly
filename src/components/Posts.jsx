@@ -7,11 +7,12 @@ import likeCount from '../img/likesCount.png';
 const Posts = () => {
 
     const [activated, setActivated] = useState(false);
+    const [likes, setLikes] = useState(0);
 
     const [posts, setPosts] = useState([
-            {name: "Billie Eilish", age:19,likes:0,id:0},
-            {name: "Benzema", age:32,likes:0,id:1},
-            {name: "Limontez", age:25,likes:0,id:2}
+            {name: "Billie Eilish", age:19,id:0,likes},
+            {name: "Benzema", age:32,id:1},
+            {name: "Limontez", age:25,id:2}
         ]);
 
 
@@ -21,8 +22,8 @@ const Posts = () => {
 
 
     const handleIncrement = (id) => {
-        // posts[id].likes+1;
-        setPosts(posts);
+        console.log(id);
+        setLikes(likes+1);
         setActivated(true);
     }
 
