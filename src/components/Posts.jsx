@@ -1,24 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
+import trash from '../img/trash.png';
 
 
 const Posts = () => {
 
-    const posts = [
-        {name: "Billie Eilish", age:19},
-        {name: "Benzema", age:32},
-        {name: "Limontez", age:25}
-    ];
+    const [posts,setPost] = useState([
+        {name: "Benzema", age:32, id:1},
+        {name: "Billie Eilish", age:19, id:2},
+        {name: "Limontez", age:25, id:3}
+    ]);
 
-
-    function onDelete(){
-        posts.pop();
+    function onDelete(id){
+        setPost(posts.filter(post => post.id!==id));
     }
 
 
     return (
 
-        <div>
-            {posts.map(element => <div style={{height:"200px", width:"400px", backgroundColor:"#e9e8e8", borderRadius:"0.5rem", display:"flex", flexDirection:"column", marginTop:"100px", marginLeft:"37vw"}}><p>Name: {element.name}</p><p>Age: {element.age}</p><button className="btn btn-danger" style={{marginTop:"82px"}} onClick={onDelete}>Delete</button></div>)}
+        <div className="flex flex-col items-center mt-24">
+            {posts.map(element =>
+                <div className="h-[200px] w-[400px] bg-gradient-to-r from-purple-400 to-orange-400 rounded-md mt-12">
+                    <p className="text-white ml-12 mt-8 text-lg">Name: {element.name}</p><p className="text-white ml-12 text-lg">Age: {element.age}</p>
+                    <img src={trash} alt="trash" className="absolute h-6 hover:cursor-pointer mt-16 ml-[350px]" onClick={()=>onDelete(element.id)} />
+                </div>)}
         </div>
 
     );
