@@ -1,9 +1,15 @@
 import React from 'react';
+import Form from "./Form";
 
-const Create = () => {
+const Create = (props) => {
+
+    const posts = props.posts;
+    const setPost = props.setPost;
+
+
     return (
         <div>
-            <h1>Here you can create your own post, let's show your creativity!</h1>
+           <Form posts={posts} setPost={setPost} />
         </div>
     );
 };

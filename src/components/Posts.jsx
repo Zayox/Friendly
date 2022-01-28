@@ -1,14 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import trash from '../img/trash.png';
 
 
-const Posts = () => {
+const Posts = (props) => {
 
-    const [posts,setPost] = useState([
-        {name: "Benzema", age:32, id:1},
-        {name: "Billie Eilish", age:19, id:2},
-        {name: "Limontez", age:25, id:3}
-    ]);
+    const posts = props.posts;
+    const setPost = props.setPost;
 
     function onDelete(id){
         setPost(posts.filter(post => post.id!==id));
@@ -16,7 +13,6 @@ const Posts = () => {
 
 
     return (
-
         <div className="flex flex-col items-center mt-24">
             {posts.map(element =>
                 <div className="h-[200px] w-[400px] bg-gradient-to-r from-purple-400 to-orange-400 rounded-md mt-12">
